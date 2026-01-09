@@ -7,14 +7,14 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'service Demo Example';
-
-
-  message = '';
+ 
+  users: any[] = [];
 
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.message = this.userService.getMessage();
+    this.userService.getUsers().subscribe(data => {
+      this.users = data as any[];
+    });
   }
 }

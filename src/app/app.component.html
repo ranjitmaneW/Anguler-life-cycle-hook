@@ -1,1 +1,7 @@
-<p  style="color: brown; font-style: italic; font-size: larger;font-size: 50px;">{{ message }}</p>
+<h2>User List (API Call)</h2>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.name }} - {{ user.email }}
+  </li>
+</ul>
